@@ -1,4 +1,4 @@
-FROM quay.io/astronomer/astro-runtime:8.8.0
+FROM quay.io/astronomer/astro-runtime:9.2.0
 
 # install soda into a virtual environment
 RUN python -m venv soda_venv && source soda_venv/bin/activate && \
