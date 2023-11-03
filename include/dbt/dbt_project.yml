@@ -1,0 +1,9 @@
+# dbt_project.yml
+
+name: 'sleep_health'
+
+profile: 'sleep_health'
+
+models:
+  sleep_health:
+    materialized: table

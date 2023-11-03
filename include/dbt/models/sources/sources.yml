@@ -1,0 +1,10 @@
+
+# sources.yml
+version: 2
+
+sources:
+  - name: sleep_health
+    database: airflow-data-pipeline-404012 # Put the project id!
+
+    tables:
+      - name: raw_sleep_health

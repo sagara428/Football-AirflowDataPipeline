@@ -1,14 +1,14 @@
 # profiles.yml
 
-retail:
+sleep_health:
  target: dev
  outputs:
   dev:
     type: bigquery
     method: service-account
     keyfile: /usr/local/airflow/include/gcp/service_account.json
-    project: airtube-390719
-    dataset: retail
+    project: airflow-data-pipeline-404012
+    dataset: sleep_health
     threads: 1
     timeout_seconds: 300
     location: US
