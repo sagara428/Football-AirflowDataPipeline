@@ -13,7 +13,7 @@ WITH tournament_eras AS (
     FROM `airflow-data-pipeline-404012`.`international_football`.`raw_results` AS r
 )
 SELECT
-    RANK() OVER (ORDER BY tournament) AS tournament_id,
+    RANK() OVER (ORDER BY tournament, team_name) AS tournament_id,
     tournament,
     team_name,
     STRING_AGG(DISTINCT era, ', ') AS eras

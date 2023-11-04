@@ -6158,3 +6158,322 @@ JOIN `airflow-data-pipeline-404012`.`international_football`.`dim_tournaments` A
 [0m15:42:04.004265 [debug] [MainThread]: Command `dbt run` succeeded at 15:42:04.004081 after 27.04 seconds
 [0m15:42:04.005458 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc600032150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc600188ed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc5ffea4c50>]}
 [0m15:42:04.006705 [debug] [MainThread]: Flushing usage events
+[0m15:47:13.519964 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0eeac37d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0eeac840d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0eec34e6d0>]}
+
+
+============================== 15:47:13.525184 | f4dd2ae7-be20-4c9d-a83e-0c1605fade5b ==============================
+[0m15:47:13.525184 [info ] [MainThread]: Running with dbt=1.5.9
+[0m15:47:13.526914 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'profiles_dir': '/usr/local/airflow/include/dbt/', 'static_parser': 'True', 'use_experimental_parser': 'False', 'log_path': '/usr/local/airflow/include/dbt/logs', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'warn_error': 'None', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'indirect_selection': 'eager', 'log_format': 'default', 'log_cache_events': 'False', 'target_path': 'None', 'version_check': 'True', 'partial_parse': 'True', 'quiet': 'False', 'debug': 'False', 'write_json': 'True', 'printer_width': '80', 'cache_selected_only': 'False'}
+[0m15:47:13.910377 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f4dd2ae7-be20-4c9d-a83e-0c1605fade5b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ee8b13750>]}
+[0m15:47:13.925103 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f4dd2ae7-be20-4c9d-a83e-0c1605fade5b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ee8afaa90>]}
+[0m15:47:13.927385 [info ] [MainThread]: Registered adapter: bigquery=1.5.3
+[0m15:47:13.974206 [debug] [MainThread]: checksum: dd837546c89c9d03f3c2cb0ca6165266a30da6076d5d44e9991f7c5a8e5f5831, vars: {}, profile: , target: , version: 1.5.9
+[0m15:47:15.590977 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m15:47:15.592727 [debug] [MainThread]: Partial parsing: updated file: international_football://models/transform/dim_tournaments.sql
+[0m15:47:15.614060 [debug] [MainThread]: 1699: static parser successfully parsed transform/dim_tournaments.sql
+[0m15:47:15.642527 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f4dd2ae7-be20-4c9d-a83e-0c1605fade5b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ee89bee10>]}
+[0m15:47:15.674567 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f4dd2ae7-be20-4c9d-a83e-0c1605fade5b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ee8b23ed0>]}
+[0m15:47:15.677190 [info ] [MainThread]: Found 5 models, 0 tests, 0 snapshots, 0 analyses, 474 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics, 0 groups
+[0m15:47:15.679457 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f4dd2ae7-be20-4c9d-a83e-0c1605fade5b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0eedbc76d0>]}
+[0m15:47:15.682107 [info ] [MainThread]: 
+[0m15:47:15.684213 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m15:47:15.687280 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_airflow-data-pipeline-404012'
+[0m15:47:15.688700 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:47:16.248597 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_airflow-data-pipeline-404012, now list_airflow-data-pipeline-404012_international_football)
+[0m15:47:16.252500 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:47:16.795892 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f4dd2ae7-be20-4c9d-a83e-0c1605fade5b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0eeb8eaa10>]}
+[0m15:47:16.799703 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:47:16.802402 [info ] [MainThread]: 
+[0m15:47:16.816933 [debug] [Thread-1 (]: Began running node model.international_football.dim_teams
+[0m15:47:16.819455 [info ] [Thread-1 (]: 1 of 5 START sql table model international_football.dim_teams .................. [RUN]
+[0m15:47:16.821971 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_airflow-data-pipeline-404012_international_football, now model.international_football.dim_teams)
+[0m15:47:16.823611 [debug] [Thread-1 (]: Began compiling node model.international_football.dim_teams
+[0m15:47:16.831759 [debug] [Thread-1 (]: Writing injected SQL for node "model.international_football.dim_teams"
+[0m15:47:16.849969 [debug] [Thread-1 (]: Timing info for model.international_football.dim_teams (compile): 15:47:16.824681 => 15:47:16.849568
+[0m15:47:16.851910 [debug] [Thread-1 (]: Began executing node model.international_football.dim_teams
+[0m15:47:16.866887 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:47:17.422541 [debug] [Thread-1 (]: Writing runtime sql for node "model.international_football.dim_teams"
+[0m15:47:17.447144 [debug] [Thread-1 (]: On model.international_football.dim_teams: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "international_football", "target_name": "dev", "node_id": "model.international_football.dim_teams"} */
+
+  
+    
+
+    create or replace table `airflow-data-pipeline-404012`.`international_football`.`dim_teams`
+    
+    
+
+    OPTIONS()
+    as (
+      -- Create the dim_teams table
+
+WITH team_stats AS (
+    SELECT
+        home_team AS team_name,
+        SUM(CASE WHEN home_score > away_score THEN 1 ELSE 0 END) AS wins,
+        SUM(CASE WHEN home_score < away_score THEN 1 ELSE 0 END) AS losses,
+        SUM(home_score) AS goals_scored,
+        SUM(away_score) AS goals_conceded
+    FROM `airflow-data-pipeline-404012`.`international_football`.`raw_results`
+    GROUP BY home_team
+    UNION ALL
+    SELECT
+        away_team AS team_name,
+        SUM(CASE WHEN away_score > home_score THEN 1 ELSE 0 END) AS wins,
+        SUM(CASE WHEN away_score < home_score THEN 1 ELSE 0 END) AS losses,
+        SUM(away_score) AS goals_scored,
+        SUM(home_score) AS goals_conceded
+    FROM `airflow-data-pipeline-404012`.`international_football`.`raw_results`
+    GROUP BY away_team
+    UNION ALL
+    SELECT
+        home_team AS team_name,
+        0 AS wins,
+        0 AS losses,
+        0 AS goals_scored,
+        0 AS goals_conceded
+    FROM `airflow-data-pipeline-404012`.`international_football`.`raw_shootouts`
+    UNION ALL
+    SELECT
+        away_team AS team_name,
+        0 AS wins,
+        0 AS losses,
+        0 AS goals_scored,
+        0 AS goals_conceded
+    FROM `airflow-data-pipeline-404012`.`international_football`.`raw_shootouts`
+)
+SELECT
+    RANK() OVER (ORDER BY team_name) AS team_id,
+    team_name,
+    SUM(wins) AS total_wins,
+    SUM(losses) AS total_losses,
+    SUM(goals_scored) AS total_goals_scored,
+    SUM(goals_conceded) AS total_goals_conceded
+FROM team_stats
+GROUP BY team_name
+    );
+  
+[0m15:47:21.603470 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=airflow-data-pipeline-404012&j=bq:US:312d1613-5a07-4098-89ea-e8fb39767044&page=queryresults
+[0m15:47:21.620641 [debug] [Thread-1 (]: Timing info for model.international_football.dim_teams (execute): 15:47:16.853651 => 15:47:21.620465
+[0m15:47:21.623811 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f4dd2ae7-be20-4c9d-a83e-0c1605fade5b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0eeac873d0>]}
+[0m15:47:21.626485 [info ] [Thread-1 (]: 1 of 5 OK created sql table model international_football.dim_teams ............. [[32mCREATE TABLE (317.0 rows, 1.6 MiB processed)[0m in 4.80s]
+[0m15:47:21.628684 [debug] [Thread-1 (]: Finished running node model.international_football.dim_teams
+[0m15:47:21.630174 [debug] [Thread-1 (]: Began running node model.international_football.dim_tournaments
+[0m15:47:21.631525 [info ] [Thread-1 (]: 2 of 5 START sql table model international_football.dim_tournaments ............ [RUN]
+[0m15:47:21.633456 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.international_football.dim_teams, now model.international_football.dim_tournaments)
+[0m15:47:21.635028 [debug] [Thread-1 (]: Began compiling node model.international_football.dim_tournaments
+[0m15:47:21.639141 [debug] [Thread-1 (]: Writing injected SQL for node "model.international_football.dim_tournaments"
+[0m15:47:21.659786 [debug] [Thread-1 (]: Timing info for model.international_football.dim_tournaments (compile): 15:47:21.636250 => 15:47:21.659437
+[0m15:47:21.661428 [debug] [Thread-1 (]: Began executing node model.international_football.dim_tournaments
+[0m15:47:21.665141 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:47:22.232018 [debug] [Thread-1 (]: Writing runtime sql for node "model.international_football.dim_tournaments"
+[0m15:47:22.250479 [debug] [Thread-1 (]: On model.international_football.dim_tournaments: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "international_football", "target_name": "dev", "node_id": "model.international_football.dim_tournaments"} */
+
+  
+    
+
+    create or replace table `airflow-data-pipeline-404012`.`international_football`.`dim_tournaments`
+    
+    
+
+    OPTIONS()
+    as (
+      -- Create the dim_tournaments table with references to dim_teams
+
+WITH tournament_eras AS (
+    SELECT
+        r.tournament,
+        r.home_team AS team_name,
+        CASE
+            WHEN r.date >= '2000-01-01' THEN 'Modern Era'
+            WHEN r.date >= '1990-01-01' THEN 'Late 20th Century'
+            WHEN r.date >= '1980-01-01' THEN '1980s'
+            ELSE 'Earlier'
+        END AS era
+    FROM `airflow-data-pipeline-404012`.`international_football`.`raw_results` AS r
+)
+SELECT
+    RANK() OVER (ORDER BY tournament, team_name) AS tournament_id,
+    tournament,
+    team_name,
+    STRING_AGG(DISTINCT era, ', ') AS eras
+FROM tournament_eras
+GROUP BY tournament, team_name
+    );
+  
+[0m15:47:26.015631 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=airflow-data-pipeline-404012&j=bq:US:d5d17ffd-1fb6-485a-8ef6-f38f4f421a03&page=queryresults
+[0m15:47:26.021630 [debug] [Thread-1 (]: Timing info for model.international_football.dim_tournaments (execute): 15:47:21.662868 => 15:47:26.021437
+[0m15:47:26.023736 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f4dd2ae7-be20-4c9d-a83e-0c1605fade5b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ee89bf3d0>]}
+[0m15:47:26.025582 [info ] [Thread-1 (]: 2 of 5 OK created sql table model international_football.dim_tournaments ....... [[32mCREATE TABLE (2.1k rows, 1.6 MiB processed)[0m in 4.39s]
+[0m15:47:26.027489 [debug] [Thread-1 (]: Finished running node model.international_football.dim_tournaments
+[0m15:47:26.029304 [debug] [Thread-1 (]: Began running node model.international_football.fact_results
+[0m15:47:26.031079 [info ] [Thread-1 (]: 3 of 5 START sql table model international_football.fact_results ............... [RUN]
+[0m15:47:26.033394 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.international_football.dim_tournaments, now model.international_football.fact_results)
+[0m15:47:26.034768 [debug] [Thread-1 (]: Began compiling node model.international_football.fact_results
+[0m15:47:26.039045 [debug] [Thread-1 (]: Writing injected SQL for node "model.international_football.fact_results"
+[0m15:47:26.052579 [debug] [Thread-1 (]: Timing info for model.international_football.fact_results (compile): 15:47:26.035967 => 15:47:26.052201
+[0m15:47:26.055050 [debug] [Thread-1 (]: Began executing node model.international_football.fact_results
+[0m15:47:26.058875 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:47:26.593772 [debug] [Thread-1 (]: Writing runtime sql for node "model.international_football.fact_results"
+[0m15:47:26.613721 [debug] [Thread-1 (]: On model.international_football.fact_results: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "international_football", "target_name": "dev", "node_id": "model.international_football.fact_results"} */
+
+  
+    
+
+    create or replace table `airflow-data-pipeline-404012`.`international_football`.`fact_results`
+    
+    
+
+    OPTIONS()
+    as (
+      -- Create the fact_results table with references to dim_teams
+
+WITH results AS (
+    SELECT
+        date,
+        home_team,
+        away_team,
+        home_score,
+        away_score
+    FROM `airflow-data-pipeline-404012`.`international_football`.`raw_results`
+)
+SELECT
+    date,
+    home_team,
+    away_team,
+    home_score,
+    away_score,
+    CASE WHEN home_score > away_score THEN home_team
+         WHEN home_score < away_score THEN away_team
+         ELSE 'Draw'
+    END AS result,
+    t1.team_id AS home_team_id,
+    t2.team_id AS away_team_id
+FROM results
+JOIN `airflow-data-pipeline-404012`.`international_football`.`dim_teams` AS t1 ON results.home_team = t1.team_name
+JOIN `airflow-data-pipeline-404012`.`international_football`.`dim_teams` AS t2 ON results.away_team = t2.team_name
+    );
+  
+[0m15:47:30.151393 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=airflow-data-pipeline-404012&j=bq:US:610e3714-e21b-4c10-8249-620b1978c858&page=queryresults
+[0m15:47:30.155291 [debug] [Thread-1 (]: Timing info for model.international_football.fact_results (execute): 15:47:26.056304 => 15:47:30.155028
+[0m15:47:30.158304 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f4dd2ae7-be20-4c9d-a83e-0c1605fade5b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ee8a1dc10>]}
+[0m15:47:30.160611 [info ] [Thread-1 (]: 3 of 5 OK created sql table model international_football.fact_results .......... [[32mCREATE TABLE (45.1k rows, 1.9 MiB processed)[0m in 4.13s]
+[0m15:47:30.163130 [debug] [Thread-1 (]: Finished running node model.international_football.fact_results
+[0m15:47:30.165683 [debug] [Thread-1 (]: Began running node model.international_football.fact_tournaments
+[0m15:47:30.168059 [info ] [Thread-1 (]: 4 of 5 START sql table model international_football.fact_tournaments ........... [RUN]
+[0m15:47:30.170842 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.international_football.fact_results, now model.international_football.fact_tournaments)
+[0m15:47:30.173496 [debug] [Thread-1 (]: Began compiling node model.international_football.fact_tournaments
+[0m15:47:30.185115 [debug] [Thread-1 (]: Writing injected SQL for node "model.international_football.fact_tournaments"
+[0m15:47:30.211191 [debug] [Thread-1 (]: Timing info for model.international_football.fact_tournaments (compile): 15:47:30.175648 => 15:47:30.210528
+[0m15:47:30.213509 [debug] [Thread-1 (]: Began executing node model.international_football.fact_tournaments
+[0m15:47:30.219831 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:47:30.771239 [debug] [Thread-1 (]: Writing runtime sql for node "model.international_football.fact_tournaments"
+[0m15:47:30.794609 [debug] [Thread-1 (]: On model.international_football.fact_tournaments: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "international_football", "target_name": "dev", "node_id": "model.international_football.fact_tournaments"} */
+
+  
+    
+
+    create or replace table `airflow-data-pipeline-404012`.`international_football`.`fact_tournaments`
+    
+    
+
+    OPTIONS()
+    as (
+      -- Create the fact_tournaments table with references to dim_teams
+
+WITH tournament_results AS (
+    SELECT
+        date,
+        home_team,
+        away_team,
+        CASE WHEN home_score > away_score THEN home_team
+             WHEN home_score < away_score THEN away_team
+             ELSE 'Draw'
+        END AS result
+    FROM `airflow-data-pipeline-404012`.`international_football`.`raw_results`
+)
+SELECT
+    t.date,
+    t.home_team,
+    t.away_team,
+    t.result,
+    CASE WHEN t.result = t.home_team THEN 1 ELSE 0 END AS home_team_win,
+    t1.team_id AS home_team_id,
+    t2.team_id AS away_team_id
+FROM tournament_results AS t
+JOIN `airflow-data-pipeline-404012`.`international_football`.`dim_teams` AS t1 ON t.home_team = t1.team_name
+JOIN `airflow-data-pipeline-404012`.`international_football`.`dim_teams` AS t2 ON t.away_team = t2.team_name
+    );
+  
+[0m15:47:34.232523 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=airflow-data-pipeline-404012&j=bq:US:8f707101-89fd-4a78-872e-b98332b6bd32&page=queryresults
+[0m15:47:34.238058 [debug] [Thread-1 (]: Timing info for model.international_football.fact_tournaments (execute): 15:47:30.215595 => 15:47:34.237875
+[0m15:47:34.241122 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f4dd2ae7-be20-4c9d-a83e-0c1605fade5b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ee8a49910>]}
+[0m15:47:34.243423 [info ] [Thread-1 (]: 4 of 5 OK created sql table model international_football.fact_tournaments ...... [[32mCREATE TABLE (45.1k rows, 1.9 MiB processed)[0m in 4.07s]
+[0m15:47:34.245793 [debug] [Thread-1 (]: Finished running node model.international_football.fact_tournaments
+[0m15:47:34.247988 [debug] [Thread-1 (]: Began running node model.international_football.fact_friendlies
+[0m15:47:34.249644 [info ] [Thread-1 (]: 5 of 5 START sql table model international_football.fact_friendlies ............ [RUN]
+[0m15:47:34.251481 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.international_football.fact_tournaments, now model.international_football.fact_friendlies)
+[0m15:47:34.252999 [debug] [Thread-1 (]: Began compiling node model.international_football.fact_friendlies
+[0m15:47:34.257747 [debug] [Thread-1 (]: Writing injected SQL for node "model.international_football.fact_friendlies"
+[0m15:47:34.272093 [debug] [Thread-1 (]: Timing info for model.international_football.fact_friendlies (compile): 15:47:34.254312 => 15:47:34.271747
+[0m15:47:34.273444 [debug] [Thread-1 (]: Began executing node model.international_football.fact_friendlies
+[0m15:47:34.276971 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:47:34.815669 [debug] [Thread-1 (]: Writing runtime sql for node "model.international_football.fact_friendlies"
+[0m15:47:34.829788 [debug] [Thread-1 (]: On model.international_football.fact_friendlies: /* {"app": "dbt", "dbt_version": "1.5.9", "profile_name": "international_football", "target_name": "dev", "node_id": "model.international_football.fact_friendlies"} */
+
+  
+    
+
+    create or replace table `airflow-data-pipeline-404012`.`international_football`.`fact_friendlies`
+    
+    
+
+    OPTIONS()
+    as (
+      -- Create the fact_friendlies table with references to dim_teams and dim_tournaments
+
+WITH friendlies AS (
+    SELECT
+        DISTINCT date,
+        home_team,
+        away_team,
+        home_score,
+        away_score,
+        tournament
+    FROM `airflow-data-pipeline-404012`.`international_football`.`raw_results`
+    WHERE tournament LIKE '%Friendly'
+)
+SELECT
+    DISTINCT f.date,
+    f.home_team,
+    f.away_team,
+    f.tournament,
+    CASE WHEN home_score > away_score THEN home_team
+         WHEN home_score < away_score THEN away_team
+         ELSE 'Draw'
+    END AS result,
+    t1.team_id AS home_team_id,
+    t2.team_id AS away_team_id,
+    dt.tournament_id AS tournament_id
+FROM friendlies AS f
+JOIN `airflow-data-pipeline-404012`.`international_football`.`dim_teams` AS t1 ON f.home_team = t1.team_name
+JOIN `airflow-data-pipeline-404012`.`international_football`.`dim_teams` AS t2 ON f.away_team = t2.team_name
+JOIN `airflow-data-pipeline-404012`.`international_football`.`dim_tournaments` AS dt ON f.tournament = dt.tournament
+    );
+  
+[0m15:47:51.200551 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=airflow-data-pipeline-404012&j=bq:US:7af1a22c-6251-4bd0-a74c-1a5be44de910&page=queryresults
+[0m15:47:51.207791 [debug] [Thread-1 (]: Timing info for model.international_football.fact_friendlies (execute): 15:47:34.274632 => 15:47:51.207547
+[0m15:47:51.210535 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f4dd2ae7-be20-4c9d-a83e-0c1605fade5b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0ee8b1c050>]}
+[0m15:47:51.212844 [info ] [Thread-1 (]: 5 of 5 OK created sql table model international_football.fact_friendlies ....... [[32mCREATE TABLE (4.5m rows, 2.8 MiB processed)[0m in 16.96s]
+[0m15:47:51.214973 [debug] [Thread-1 (]: Finished running node model.international_football.fact_friendlies
+[0m15:47:51.219119 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:47:51.220599 [debug] [MainThread]: Connection 'model.international_football.fact_friendlies' was properly closed.
+[0m15:47:51.222288 [info ] [MainThread]: 
+[0m15:47:51.223856 [info ] [MainThread]: Finished running 5 table models in 0 hours 0 minutes and 35.54 seconds (35.54s).
+[0m15:47:51.226996 [debug] [MainThread]: Command end result
+[0m15:47:51.257098 [info ] [MainThread]: 
+[0m15:47:51.258955 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:47:51.260535 [info ] [MainThread]: 
+[0m15:47:51.262126 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
+[0m15:47:51.263952 [debug] [MainThread]: Command `dbt run` succeeded at 15:47:51.263746 after 37.78 seconds
+[0m15:47:51.265391 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0eeb510390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0eeeb87890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0eeeb94b10>]}
+[0m15:47:51.266918 [debug] [MainThread]: Flushing usage events
