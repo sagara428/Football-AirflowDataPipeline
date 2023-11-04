@@ -3,10 +3,13 @@ from airflow.decorators import dag, task
 from airflow.utils.task_group import TaskGroup
 from airflow.providers.google.cloud.transfers.local_to_gcs import LocalFilesystemToGCSOperator
 from airflow.providers.google.cloud.operators.bigquery import BigQueryCreateEmptyDatasetOperator
+from airflow.operators.bash_operator import BashOperator
 from astro import sql as aql
 from astro.files import File
 from astro.sql.table import Table, Metadata
 from astro.constants import FileType
+from include.dbt.cosmos_config import DBT_PROJECT_CONFIG 
+    
 
 @dag(
     start_date = datetime(2023, 10, 22),
@@ -76,7 +79,6 @@ def international_football():
             ),
             use_native_support = True,
         )
-
         create_dataset >> raw_goalscorers >> raw_shootouts >> raw_results
     # End task group definition
     
@@ -87,8 +89,20 @@ def international_football():
 
         return check(scan_name, checks_subpath)
     task_check_load = check_load()
+   
+    transform = BashOperator(
+            task_id='transform',
+            bash_command ='''
+                source /usr/local/airflow/dbt_venv/bin/activate &&
+                cd /usr/local/airflow/include/dbt &&
+                dbt deps &&
+                dbt run --profiles-dir /usr/local/airflow/include/dbt/
+                ''',
+        )
+
+   
     # Set tasks dependencies
-    csv_to_gcs >> tg1 >> task_check_load
+    csv_to_gcs >> tg1 >> task_check_load >> transform
 
 
 
