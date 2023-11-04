@@ -1,0 +1,17 @@
+checks for raw_results:
+  - schema:
+      fail:
+        when required column missing: [
+          date, home_team, away_team, home_score, 
+          away_score, tournament, city, country, neutral
+          ]
+        when wrong column type:
+          date: date
+          home_team: string
+          away_team: string
+          home_score: integer
+          away_score: integer
+          tournament: string
+          city: string
+          country: string
+          neutral: bool

@@ -1,5 +1,5 @@
 # include/soda/check_function.py
-def check(scan_name, checks_subpath=None, data_source='sleep_health', project_root='include'):
+def check(scan_name, checks_subpath=None, data_source='international_football', project_root='include'):
     from soda.scan import Scan
 
     print('Running Soda Scan ...')

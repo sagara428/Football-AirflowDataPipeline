@@ -1,0 +1,16 @@
+checks for raw_goalscorers:
+  - schema:
+      fail:
+        when required column missing: [
+          date, home_team, away_team, team, 
+          scorer, minute, own_goal, penalty 
+          ]
+        when wrong column type:
+          date: date
+          home_team: string
+          away_team: string
+          team: string
+          scorer: string
+          minute: string
+          own_goal: bool
+          penalty: bool

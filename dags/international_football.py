@@ -1,5 +1,6 @@
-from airflow.decorators import dag, task, task_group
 from datetime import datetime
+from airflow.decorators import dag, task
+from airflow.utils.task_group import TaskGroup
 from airflow.providers.google.cloud.transfers.local_to_gcs import LocalFilesystemToGCSOperator
 from airflow.providers.google.cloud.operators.bigquery import BigQueryCreateEmptyDatasetOperator
 from astro import sql as aql
@@ -26,9 +27,7 @@ def international_football():
         mime_type = 'text/csv',
     )
 
-    @task_group(group_id = 'gcs_to_bigquery')
-    def tg1():
-        
+    with TaskGroup(group_id = 'gcs_to_bigquery') as tg1:
         create_dataset = BigQueryCreateEmptyDatasetOperator(
             task_id = 'create_dataset',
             dataset_id = 'international_football',
@@ -79,15 +78,18 @@ def international_football():
         )
 
         create_dataset >> raw_goalscorers >> raw_shootouts >> raw_results
-
-    tg1()
+    # End task group definition
+    
 
     @task.external_python(python = '/usr/local/airflow/soda_venv/bin/python')
     def check_load(scan_name = 'check_load', checks_subpath = 'sources'):
         from include.soda.check_function import check
 
         return check(scan_name, checks_subpath)
-    
-    check_load()
+    task_check_load = check_load()
+    # Set tasks dependencies
+    csv_to_gcs >> tg1 >> task_check_load
+
+
 
 international_football()

@@ -1,10 +1,11 @@
-
 # sources.yml
 version: 2
 
 sources:
-  - name: sleep_health
+  - name: international_football
     database: airflow-data-pipeline-404012 # Put the project id!
 
     tables:
-      - name: raw_sleep_health
+      - name: raw_results
+      - name: raw_goalscorers
+      - name: raw_shootouts

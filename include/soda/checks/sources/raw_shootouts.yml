@@ -1,0 +1,12 @@
+checks for raw_shootouts:
+  - schema:
+      fail:
+        when required column missing: [
+          date, home_team, away_team, winner, first_shooter
+          ]
+        when wrong column type:
+          date: date
+          home_team: string
+          away_team: string
+          winner: string
+          first_shooter: string

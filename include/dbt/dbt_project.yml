@@ -1,9 +1,9 @@
 # dbt_project.yml
 
-name: 'sleep_health'
+name: 'international_football'
 
-profile: 'sleep_health'
+profile: 'international_football'
 
 models:
-  sleep_health:
+  international_football:
     materialized: table

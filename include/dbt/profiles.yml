@@ -1,6 +1,6 @@
 # profiles.yml
 
-sleep_health:
+international_football:
  target: dev
  outputs:
   dev:
@@ -8,7 +8,7 @@ sleep_health:
     method: service-account
     keyfile: /usr/local/airflow/include/gcp/service_account.json
     project: airflow-data-pipeline-404012
-    dataset: sleep_health
+    dataset: international_football
     threads: 1
     timeout_seconds: 300
     location: US
