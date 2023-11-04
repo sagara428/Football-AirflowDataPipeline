@@ -1,4 +1,14 @@
--- Create the dim_tournaments table with references to dim_teams
+
+  
+    
+
+    create or replace table `airflow-data-pipeline-404012`.`international_football`.`dim_tournaments`
+    
+    
+
+    OPTIONS()
+    as (
+      -- Create the dim_tournaments table with references to dim_teams
 
 WITH tournament_eras AS (
     SELECT
@@ -10,7 +20,7 @@ WITH tournament_eras AS (
             WHEN r.date >= '1980-01-01' THEN '1980s'
             ELSE 'Earlier'
         END AS era
-    FROM {{ source('international_football', 'raw_results') }} AS r
+    FROM `airflow-data-pipeline-404012`.`international_football`.`raw_results` AS r
 )
 SELECT
     RANK() OVER (ORDER BY tournament) AS tournament_id,
@@ -19,3 +29,5 @@ SELECT
     STRING_AGG(DISTINCT era, ', ') AS eras
 FROM tournament_eras
 GROUP BY tournament, team_name
+    );
+  

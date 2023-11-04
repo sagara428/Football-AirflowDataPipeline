@@ -10,7 +10,7 @@ WITH tournament_eras AS (
             WHEN r.date >= '1980-01-01' THEN '1980s'
             ELSE 'Earlier'
         END AS era
-    FROM {{ source('international_football', 'raw_results') }} AS r
+    FROM `airflow-data-pipeline-404012`.`international_football`.`raw_results` AS r
 )
 SELECT
     RANK() OVER (ORDER BY tournament) AS tournament_id,
