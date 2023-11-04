@@ -1,0 +1,12 @@
+checks for dim_tournaments:
+  - row_count > 0 # check if the table is empty or not
+  - schema:
+      fail:
+        when required column missing: [
+          tournament_id, tournament, team_name, eras
+          ]
+        when wrong column type:
+          tournament_id: integer
+          tournament: string
+          team_name: string
+          eras: string

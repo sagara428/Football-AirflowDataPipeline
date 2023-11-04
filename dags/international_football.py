@@ -4,11 +4,11 @@ from airflow.utils.task_group import TaskGroup
 from airflow.providers.google.cloud.transfers.local_to_gcs import LocalFilesystemToGCSOperator
 from airflow.providers.google.cloud.operators.bigquery import BigQueryCreateEmptyDatasetOperator
 from airflow.operators.bash_operator import BashOperator
+from airflow.models.baseoperator import chain
 from astro import sql as aql
 from astro.files import File
 from astro.sql.table import Table, Metadata
 from astro.constants import FileType
-from include.dbt.cosmos_config import DBT_PROJECT_CONFIG 
     
 
 @dag(
@@ -99,11 +99,18 @@ def international_football():
                 dbt run --profiles-dir /usr/local/airflow/include/dbt/
                 ''',
         )
+    @task.external_python(python = '/usr/local/airflow/soda_venv/bin/python')
+    def check_transform(scan_name = 'check_load', checks_subpath = 'transform'):
+        from include.soda.check_function import check
 
-   
+        return check(scan_name, checks_subpath)
+    task_check_transform = check_transform()
+
     # Set tasks dependencies
-    csv_to_gcs >> tg1 >> task_check_load >> transform
-
+    
+    chain(
+        csv_to_gcs, tg1, task_check_load, transform, task_check_transform
+    )
 
 
 international_football()

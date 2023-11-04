@@ -1,0 +1,17 @@
+checks for fact_friendlies:
+  - row_count > 0 # check if the table is empty or not
+  - schema:
+      fail:
+        when required column missing: [
+          date, home_team, away_team, tournament,
+          result, home_team_id, away_team_id, tournament_id          
+          ]
+        when wrong column type:
+          date: date
+          home_team: string
+          away_team: string
+          tournament: string
+          result: string
+          home_team_id: integer
+          away_team_id: integer
+          tournament_id: integer

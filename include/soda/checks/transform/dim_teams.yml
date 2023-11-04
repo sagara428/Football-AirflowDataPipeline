@@ -1,0 +1,15 @@
+checks for dim_teams:
+  - row_count > 0 # check if the table is empty or not
+  - schema:
+      fail:
+        when required column missing: [
+          team_id, team_name, total_wins, total_losses, 
+          total_goals_scored, total_goals_conceded 
+          ]
+        when wrong column type:
+          team_id: integer
+          team_name: string
+          total_wins: integer
+          total_losses: integer
+          total_goals_scored: integer
+          total_goals_conceded: integer

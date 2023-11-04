@@ -26,7 +26,7 @@ SELECT
     t.home_team,
     t.away_team,
     t.result,
-    CASE WHEN t.result = t.home_team THEN 1 ELSE 0 END AS home_team_win,
+    CASE WHEN t.result = t.home_team THEN 'Yes' ELSE 'No' END AS home_team_win,
     t1.team_id AS home_team_id,
     t2.team_id AS away_team_id
 FROM tournament_results AS t
