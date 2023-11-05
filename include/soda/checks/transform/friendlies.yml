@@ -4,7 +4,7 @@ checks for friendlies:
       fail:
         when required column missing: [
           date, home_team, away_team, tournament,
-          result, home_team_id, away_team_id, tournament_id          
+          result, home_team_id, away_team_id          
           ]
         when wrong column type:
           date: date
