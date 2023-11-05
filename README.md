@@ -191,10 +191,6 @@ There are 5 tasks:
 ### modelling results and explanation
 ![bq](imgs/bq.png)
 
-The ERD is:
-
-![erd](imgs/ERD.jpg)
-
 Table Information:
 
 1. `team_stats`
