@@ -1,4 +1,4 @@
-checks for dim_tournaments:
+checks for tournament_eras:
   - row_count > 0 # check if the table is empty or not
   - schema:
       fail:

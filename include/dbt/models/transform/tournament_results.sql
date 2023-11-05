@@ -1,5 +1,6 @@
--- Create the fact_tournaments table with references to dim_teams
+-- tournament_results.sql
 
+-- Create tournament_results table
 WITH tournament_results AS (
     SELECT
         date,

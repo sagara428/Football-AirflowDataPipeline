@@ -1,5 +1,6 @@
--- Create the fact_friendlies table with references to dim_teams and dim_tournaments
+-- friendlies.sql
 
+-- Create the friendlies table
 WITH friendlies AS (
     SELECT
         DISTINCT date,

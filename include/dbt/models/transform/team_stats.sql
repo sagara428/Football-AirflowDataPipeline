@@ -1,5 +1,6 @@
--- Create the dim_teams table
+-- team_stats.sql
 
+-- Create team_stats table
 WITH team_stats AS (
     SELECT
         home_team AS team_name,

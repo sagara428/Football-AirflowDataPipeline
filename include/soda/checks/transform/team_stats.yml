@@ -1,4 +1,4 @@
-checks for dim_teams:
+checks for team_stats:
   - row_count > 0 # check if the table is empty or not
   - schema:
       fail:

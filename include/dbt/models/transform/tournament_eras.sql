@@ -1,5 +1,6 @@
--- Create the dim_tournaments table with references to dim_teams
+-- tournament_eras.sql
 
+-- Create the tournament_eras.sql table
 WITH tournament_eras AS (
     SELECT
         r.tournament,

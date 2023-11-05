@@ -1,5 +1,6 @@
--- Create the fact_results table with references to dim_teams
+-- results.sql
 
+-- Create results table
 WITH results AS (
     SELECT
         date,
