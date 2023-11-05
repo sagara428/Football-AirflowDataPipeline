@@ -227,7 +227,6 @@ Table Information:
         - result (string): the match's winner.
         - home_team_id (integer): the id of the team which is playing on its home ground.
         - away_team_id (integer): the id of the team which is playing away from its home ground.
-        - tournament_id (integer): the tournament's id.
     - Can be used to find out which teams are the most active in playing friendlies and friendlies tournaments. Also, check if friendlies help or hurt (total lost > total won) the team.
 
 4. `results`
