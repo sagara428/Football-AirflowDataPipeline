@@ -3,7 +3,7 @@ version: 2
 
 sources:
   - name: international_football
-    database: airflow-data-pipeline-404012 # Put the project id!
+    database: your-project-id # Put the Google Cloud project id!
 
     tables:
       - name: raw_results

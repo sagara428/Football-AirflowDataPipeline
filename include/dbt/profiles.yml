@@ -7,8 +7,8 @@ international_football:
     type: bigquery
     method: service-account
     keyfile: /usr/local/airflow/include/gcp/service_account.json
-    project: airflow-data-pipeline-404012
-    dataset: international_football
+    project: your-project-id # Change this to your GC project id 
+    dataset: international_football 
     threads: 1
     timeout_seconds: 300
     location: US
