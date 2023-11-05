@@ -279,7 +279,7 @@ If there is any unhealthy containers, then changing the version of astro-runtime
 Overall, the program worked as intended. However, the program still has many possibilites of improvement, for example:
 
 - Improve and/or fix the data models.
-- Note that Metabase is not as flexible as PowerBI and Tableau. So, next time it is worth to try implement tableau or PowerBI with Docker instead (if possible).
+- Note that Metabase is not as flexible as PowerBI and Tableau. So, next time it is worth to try implement tableau, PowerBI, or maybe another data viz tools with Docker instead (if possible).
 - Implementing the astronomer cosmos for dbt modelling to get detailed transformation flow process.
 - Update the data source by web scraping football matches.
 - Implement DataHub for DataGovt (Lineage, Catalog, etc).
