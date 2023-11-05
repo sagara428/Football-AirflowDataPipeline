@@ -10,3 +10,6 @@ webserver_config.py
 airflow.cfg
 airflow.db
 include/metabase-data/
+include/dbt/dbt_packages/
+include/dbt/logs/
+include/dbt/.user.yml
