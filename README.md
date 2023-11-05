@@ -16,7 +16,7 @@ This Airflow data pipeline loads batch data source into cloud data storage, that
 - [Code Explanation](#code-explanation)
 - [Results Explanation](#results-explanation)
     - [Load Results](#load-results)
-    - [Modeling results and explanation](#modeling-results-and-explanation)
+    - [Modelling results and explanation](#modelling-results-and-explanation)
     - [Visualizations](#visualizations)
 - [Docker Troubleshooting](#docker-troubleshooting)
 - [Conclusion and Future Updates](#conclusion-and-future-updates)
@@ -188,7 +188,7 @@ There are 5 tasks:
 
     By soda, the raw datasets have correct schema (each column types are as desired).
 
-### Modeling results and explanation
+### modelling results and explanation
 ![bq](imgs/bq.png)
 
 The ERD is:
@@ -279,6 +279,6 @@ If there is any unhealthy containers, then changing the version of astro-runtime
 Overall, the program worked as intended. However, the program still has many possibilites of improvement, for example:
 
 - Improve and/or fix the data models.
-- Implementing the astronomer cosmos for dbt modeling to get detailed transformation flow process.
+- Implementing the astronomer cosmos for dbt modelling to get detailed transformation flow process.
 - Update the data source by web scraping football matches.
 - Implement DataHub for DataGovt (Lineage, Catalog, etc).
