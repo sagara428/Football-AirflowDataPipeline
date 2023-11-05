@@ -14,4 +14,3 @@ checks for friendlies:
           result: string
           home_team_id: integer
           away_team_id: integer
-          tournament_id: integer
