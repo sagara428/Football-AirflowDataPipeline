@@ -253,6 +253,11 @@ Table Information:
     - Can be used to check how much, if at all, does hosting a major tournament help a country's chances in the tournament. Also to check if home teams have advantage.
 
 ### Visualizations
+Use Metabase to create some viz and dashboards. Here is the insight example you can get from the football data.
+
+![home_advantage](imgs/home_team.png)
+
+The question to be asked is whether home team has advantage (due to familiarity, mood, many supporters, etc) in its own ground or not. Look at the donut chart, the total of home team winning is slightly lower than away team winning. However, if we check the two bar charts, we can see that the team makes more goalscores as a home team than away team. Also note that both Germany and Spain keep their ranks no matter they are a home team or not. 
 
 ## Docker Troubleshooting
 
@@ -274,6 +279,7 @@ If there is any unhealthy containers, then changing the version of astro-runtime
 Overall, the program worked as intended. However, the program still has many possibilites of improvement, for example:
 
 - Improve and/or fix the data models.
+- Note that Metabase is not as flexible as PowerBI and Tableau. So, next time it is worth to try implement tableau or PowerBI with Docker instead (if possible).
 - Implementing the astronomer cosmos for dbt modelling to get detailed transformation flow process.
 - Update the data source by web scraping football matches.
 - Implement DataHub for DataGovt (Lineage, Catalog, etc).
