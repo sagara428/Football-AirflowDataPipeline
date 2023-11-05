@@ -25,6 +25,6 @@ SELECT
     t2.team_id AS away_team_id,
     dt.tournament_id AS tournament_id
 FROM friendlies AS f
-JOIN {{ ref('dim_teams') }} AS t1 ON f.home_team = t1.team_name
-JOIN {{ ref('dim_teams') }} AS t2 ON f.away_team = t2.team_name
-JOIN {{ ref('dim_tournaments') }} AS dt ON f.tournament = dt.tournament
+JOIN {{ ref('team_stats') }} AS t1 ON f.home_team = t1.team_name
+JOIN {{ ref('team_stats') }} AS t2 ON f.away_team = t2.team_name
+JOIN {{ ref('tournament_eras') }} AS dt ON f.tournament = dt.tournament

@@ -21,5 +21,5 @@ SELECT
     t1.team_id AS home_team_id,
     t2.team_id AS away_team_id
 FROM tournament_results AS t
-JOIN {{ ref('dim_teams') }} AS t1 ON t.home_team = t1.team_name
-JOIN {{ ref('dim_teams') }} AS t2 ON t.away_team = t2.team_name
+JOIN {{ ref('team_stats') }} AS t1 ON t.home_team = t1.team_name
+JOIN {{ ref('team_stats') }} AS t2 ON t.away_team = t2.team_name
