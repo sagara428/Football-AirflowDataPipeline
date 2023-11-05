@@ -2,7 +2,7 @@
 
 ![config](imgs/project_flow.png)
 
-This Airflow data pipeline loads batch data source into cloud data storage, that is GCS and BigQuery, and then the raw dataset quality is checked by Soda Core. After that, the raw dataset is modeled into several dimension tables and fact tables by using dbt. Finally, the created tables are checked by Soda Core to ensure the dataset quality for visualization purposes in Metabase. This project used Astronomer CLI because it is a convenient tool set up Airflow in Docker environment.
+This Airflow data pipeline loads batch data source into cloud data storage, that is GCS and BigQuery, and then the raw dataset quality is checked by Soda Core. After that, the raw dataset is modeled by SQL model files using dbt. Finally, the created tables are checked by Soda Core to ensure the dataset quality for visualization purposes in Metabase. This project used Astronomer CLI because it is a convenient tool set up Airflow in Docker environment.
 
 ## Table of Contents
 
@@ -57,8 +57,8 @@ The datasets used in this project are `results.csv`, `shootouts.csv`, and `goals
 - [Docker](https://www.docker.com/): used to containerize and manage the dependencies of various components of the project.
 - [Astro CLI](https://docs.astronomer.io/astro/cli/overview): Astro CLI is used to define and manage data pipelines in the project. Astro CLI makes it easy to set up Airflow in Docker environment. 
 - [Apache Airflow](https://airflow.apache.org/): used to define, schedule, and monitor workflows of the data pipeline as directed acyclic graphs (DAGs).
-- [dbt](https://www.getdbt.com/): used to transform the raw datasets and model the dimension tables and fact tables. 
-- [Soda Core](https://www.soda.io/): used to check the data quality of raw datasets and created dimension tables and fact tables.
+- [dbt](https://www.getdbt.com/): used to transform the raw datasets and modelling. 
+- [Soda Core](https://www.soda.io/): used to check the data quality of raw datasets and created tables after transforming raw dataset.
 - [Metabase](https://www.metabase.com/): used to create visualizations in docker environment.
 
 ## Prerequisites
@@ -167,7 +167,7 @@ There are 5 tasks:
     This task checks if the raw tables which are loaded to bigquery have correct schema.
 4. transform: Runs a transformation using dbt.
 
-    This task create dim tables and fact tables based on the dbt SQL model files at `include/dbt/transform/`.
+    This task create several tables based on the dbt SQL model files at `include/dbt/transform/`.
     
     ![dbt sql](imgs/modeling_scripts.png)
 
@@ -177,7 +177,7 @@ There are 5 tasks:
     
     This task checks the tables in bigquery based on the Soda Checks Language (.yml) at `include/soda/checks/transform/`.
 
-    This task checks if the raw tables which are loaded to bigquery are not empty and have correct schema. If a table is empty, it means the SQL model file is incorrect must be fixed.
+    This task checks if the created tables after transform task are not empty and have correct schema. If a table is empty, it means the SQL model file is incorrect must be fixed.
 ## Results
 ### Load results
 - Load batch data source to GCS.
@@ -197,11 +197,8 @@ The ERD is:
 
 Table Information:
 
-1. `dim_teams`
-    - This table represents a dimension of football teams and their statistics. 
-    
-        Each row in the dim_teams table corresponds to a unique football team, and it's related to multiple rows in the fact tables where the teams are involved.
-
+1. `team_stats`
+    - This table represents football teams and their statistics. 
     - Includes the following columns:
 
         - team_id (integer): team's id.
@@ -210,17 +207,17 @@ Table Information:
         - total_losses (integer): total match in which team lost.
         - total_goals_scored (integer): total goals scored by team.
         - total_goals_conceded (integer): the team's total of fails to stop an opposing team.
-2. `dim_tournaments`
-    - This table represents a dimension of football tournaments and their eras.
+2. `tournament_eras`
+    - This table represents a football tournaments and their eras.
     - includes the following columns:
 
         - tournament_id (integer): id of the tournament.
         - tournament (string): the name of the tournament.
         - team_name (string): the team name which participated in the tournament.
         - eras (string): football era categories based on the match's year group.
-    - Can be joined with fact tables to find out the best team of all time or teams that dominated different eras of football.
-3. `fact_friendlies`
-    - This table represents a fact table for friendly matches and their results.
+    - Can be used to find out the best team of all time or teams that dominated different eras of football.
+3. `friendlies`
+    - This table represents a table for friendly matches and their results.
     - Includes the following columns:
 
         - date (date): date of the match
@@ -233,8 +230,8 @@ Table Information:
         - tournament_id (integer): the tournament's id.
     - Can be used to find out which teams are the most active in playing friendlies and friendlies tournaments. Also, check if friendlies help or hurt (total lost > total won) the team.
 
-4. `fact_results`
-    - This table represents a fact table for match results and their outcomes.
+4. `results`
+    - This table represents a table for match results and their outcomes.
     - includes the following columns:
 
         - date (date): date of the match
@@ -247,8 +244,8 @@ Table Information:
         - away_team_id (integer): the id of the team which is playing away from its home ground.
     - Can be used to gain general insights of international football matches. Can also used for gain specific insights by joining with another tables.
 
-5. `fact_tournaments`
-    - This table represents a fact table for tournament matches and their results.
+5. `tournament_results`
+    - This table represents a table for tournament matches and their results.
     - includes the following columns:
 
         - date (date): date of the match
