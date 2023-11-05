@@ -1,7 +1,31 @@
-# include/soda/check_function.py
-def check(scan_name, checks_subpath=None, data_source='international_football', project_root='include'):
-    from soda.scan import Scan
+'''
+Module: check_function
 
+This module contains a function to run data quality checks using Soda.
+'''
+
+from soda.scan import Scan
+
+def check(scan_name, checks_subpath=None,
+          data_source='international_football', project_root='include'):
+    '''
+    Run data quality checks using Soda.
+
+    Args:
+        scan_name (str): The name of the scan.
+        checks_subpath (str, optional): The subpath for checks. Default is None.
+        data_source (str, optional): Data source name. Default is 'international_football'.
+        project_root (str, optional): The root directory of the project. Default is 'include'.
+
+    Returns:
+        int: The result code of the Soda scan. 0 indicates success.
+
+    Raises:
+        ValueError: If the Soda scan fails.
+
+    Example usage:
+    check('check_load', checks_subpath='sources')
+    '''
     print('Running Soda Scan ...')
     config_file = f'{project_root}/soda/configuration.yml'
     checks_path = f'{project_root}/soda/checks'
