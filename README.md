@@ -276,7 +276,7 @@ You can ignore this error alert if the `containers are healthy`.
 If there is any unhealthy containers, then changing the version of astro-runtime in Dockerfile might be able to fix the problem.
 
 ## Conclusion and Future Updates
-Overall, the program worked as intended. However, the program still has many possibilites of improvement, for example:
+The data pipeline still has many possibilites of improvement, for example:
 
 - Improve and/or fix the data models.
 - Note that Metabase is not as flexible as PowerBI and Tableau. So, next time it is worth to try implement tableau, PowerBI, or maybe another data viz tools with Docker instead (if possible).
