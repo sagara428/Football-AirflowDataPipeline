@@ -1,6 +1,6 @@
 ﻿# Dibimbing Data Engineering Batch 2 Final Project
 
-![config](imgs/project_flow.png)
+![config](imgs/project_flow.jpg)
 
 This Airflow data pipeline loads batch data source into cloud data storage, that is GCS and BigQuery, and then the raw dataset quality is checked by Soda Core. After that, the raw dataset is modeled by SQL model files using dbt. Finally, the created tables are checked by Soda Core to ensure the dataset quality for visualization purposes in Metabase. This project used Astronomer CLI because it is a convenient tool set up Airflow in Docker environment.
 
