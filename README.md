@@ -22,7 +22,7 @@ This Airflow data pipeline loads batch data source into cloud data storage, that
 - [Conclusion and Future Updates](#conclusion-and-future-updates)
 
 ## Dataset
-The datasets used in this project are `results.csv`, `shootouts.csv`, and `goalscorers.csv` from [kaggle](https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017/data). The dataet is about 45,099 results of international football matches starting from the very first official match in 1872 up to 2023. The matches are strictly men's full internationals and the data does not include Olympic Games or matches where at least one of the teams was the nation's B-team, U-23 or a league select team.
+The datasets used in this project are `results.csv`, `shootouts.csv`, and `goalscorers.csv` from [kaggle](https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017/data). The dataset is about 45,099 results of international football matches starting from the very first official match in 1872 up to 2023. The matches are strictly men's full internationals and the data does not include Olympic Games or matches where at least one of the teams was the nation's B-team, U-23 or a league select team.
 
 ### Dataset Information
 `results.csv` includes the following columns:
